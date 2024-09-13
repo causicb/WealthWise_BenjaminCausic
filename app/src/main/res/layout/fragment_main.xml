@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/toolbar_color">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mtv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/normal_text"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/overview"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/siv_menu"
+            android:layout_width="54dp"
+            android:layout_height="64dp"
+            android:layout_gravity="end"
+            android:src="@drawable/three_dots"
+            android:padding="@dimen/basic_padding"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/siv_avatar"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginTop="@dimen/medium_margin"/>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie_chart"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/siv_avatar"
+        android:layout_marginTop="@dimen/medium_margin"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbtn_add_revenue_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pie_chart"
+        android:text="@string/add_new_revenue_expense"/>
+
+    <include
+        android:id="@+id/progress_dialog"
+        android:visibility="gone"
+        layout="@layout/progress_dialog"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

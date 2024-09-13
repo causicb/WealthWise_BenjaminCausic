@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authenticationFragment">
+
+    <fragment
+        android:id="@+id/authenticationFragment"
+        android:name="com.bcausic.wealthwise.ui.authentication.AuthenticationFragment"
+        android:label="AuthenticationFragment"
+        tools:layout="@layout/fragment_authentication">
+        <action
+            android:id="@+id/action_authenticationFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:enterAnim="@android:anim/slide_in_left"/>
+        <action
+            android:id="@+id/action_authenticationFragment_to_revenuesAndExpensesFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/authenticationFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@android:anim/slide_in_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.bcausic.wealthwise.ui.registration.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration"/>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.bcausic.wealthwise.ui.mainscreen.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_revenuesAndExpensesFragment_to_authenticationFragment"
+            app:destination="@id/authenticationFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@android:anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_revenueAndExpenseFragment"
+            app:destination="@id/revenueAndExpenseFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_previousEntriesListFragment"
+            app:destination="@id/previousEntriesListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/revenueAndExpenseFragment"
+        android:name="com.bcausic.wealthwise.ui.revenueandexpense.RevenueAndExpenseFragment"
+        android:label="RevenueAndExpenseFragment"
+        tools:layout="@layout/fragment_revenue_and_expense"/>
+
+    <fragment
+        android:id="@+id/previousEntriesListFragment"
+        android:name="com.bcausic.wealthwise.ui.previousentries.PreviousEntriesListFragment"
+        android:label="PreviousEntriesListFragment"
+        tools:layout="@layout/fragment_previous_entries_list"/>
+
+</navigation>

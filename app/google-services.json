@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "733274703575",
+    "project_id": "wealthwise-eaec1",
+    "storage_bucket": "wealthwise-eaec1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733274703575:android:055a584401c4842e7a5292",
+        "android_client_info": {
+          "package_name": "com.bcausic.wealthwise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArAwlP4xk6_b-SPgGPY3u3BnNlF-HL1xQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
