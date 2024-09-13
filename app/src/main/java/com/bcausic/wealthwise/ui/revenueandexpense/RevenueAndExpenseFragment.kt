@@ -24,6 +24,7 @@ class RevenueAndExpenseFragment : BaseFragment<FragmentRevenueAndExpenseBinding>
     PopupMenu.OnMenuItemClickListener {
 
     private val revenueAndExpenseViewModel: RevenueAndExpenseViewModel by viewModel()
+    private val receiptText = "Racun iz kafica"
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRevenueAndExpenseBinding
         get() = FragmentRevenueAndExpenseBinding::inflate
@@ -44,7 +45,7 @@ class RevenueAndExpenseFragment : BaseFragment<FragmentRevenueAndExpenseBinding>
             val receipt = it.contents.lines()
             with(binding) {
                 if (receipt.size == 1) {
-                    binding.textInputEditTextType.setText("Račun iz Havane.")
+                    binding.textInputEditTextType.setText(receiptText)
                     binding.textInputEditTextAmount.setText(
                         extractValueFromReceipt(
                             it.contents.substringAfter(
